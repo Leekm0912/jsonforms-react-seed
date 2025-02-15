@@ -23,18 +23,18 @@ export const ImageRenderer: FC<ImageRendererProps> = ({ id, value, updateValue }
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div>
       {image ? (
-        <img src={image} alt="Uploaded" className="w-40 h-40 object-cover rounded-md shadow-md" style={{
+        <img src={image} alt="Uploaded" style={{
           width: 300,
           height: 300
         }} />
       ) : (
-        <div className="w-40 h-40 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-md">
-          <span className="text-gray-500">No image</span>
+        <div>
+          <span>No image</span>
         </div>
       )}
-      <input type="file" accept="image/*" onChange={handleFileChange} className="hidden" id="image-upload" />
+      <input type="file" accept="image/*" onChange={handleFileChange} id="image-upload" />
     </div>
   );
 };
