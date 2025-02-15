@@ -20,6 +20,19 @@
         {
           "type": "Control",
           "scope": "#/properties/rating"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/custom_input"
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/image"
         }
       ]
     },

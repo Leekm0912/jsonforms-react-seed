@@ -26,6 +26,12 @@
     },
     "recurrence_interval": {
       "type": "integer"
+    },
+    "custom_input": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
     }
   },
   "required": ["name", "due_date"]

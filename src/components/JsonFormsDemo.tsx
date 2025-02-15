@@ -9,6 +9,10 @@ import {
 } from '@jsonforms/material-renderers';
 import RatingControl from './RatingControl';
 import ratingControlTester from '../ratingControlTester';
+import CustomInputControl from './CustomInputControl';
+import customInputControlTester from '../customInputControlTester';
+import ImageControl from './ImageControl';
+import imageTester from '../imageTester';
 import schema from '../schema.json';
 import uischema from '../uischema.json';
 
@@ -50,6 +54,8 @@ const renderers = [
   ...materialRenderers,
   //register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
+  { tester: customInputControlTester, renderer: CustomInputControl },
+  { tester: imageTester, renderer: ImageControl },
 ];
 
 export const JsonFormsDemo: FC = () => {
