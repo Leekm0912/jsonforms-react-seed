@@ -12,13 +12,9 @@ export const ImageRenderer: FC<ImageRendererProps> = ({ id, value, updateValue }
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const imageUrl = reader.result as string;
-        setImage(imageUrl);
-        updateValue(imageUrl);
-      };
-      reader.readAsDataURL(file);
+      const blobURL = URL.createObjectURL(file); // Blob URL 생성
+      setImage(blobURL)
+      updateValue(blobURL)
     }
   };
 
