@@ -7,21 +7,18 @@ interface ImageRendererProps {
 }
 
 export const ImageRenderer: FC<ImageRendererProps> = ({ id, value, updateValue }) => {
-  const [image, setImage] = useState<string | null>( null);
-
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const blobURL = URL.createObjectURL(file); // Blob URL 생성
-      setImage(blobURL)
       updateValue(blobURL)
     }
   };
 
   return (
     <div>
-      {image ? (
-        <img src={image} alt="Uploaded" style={{
+      {value ? (
+        <img src={value} alt="Uploaded" style={{
           width: 300,
           height: 300
         }} />
